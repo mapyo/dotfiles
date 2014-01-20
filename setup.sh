@@ -1,5 +1,12 @@
 #!/bin/bash
+# https://github.com/yuroyoro/dotfiles/blob/master/setup.sh
 
-for file in `find $HOME/dotfiles -name '.*' | grep -v 'dotfiles/.git$' | perl -nle 'm!dotfiles/(.+)$! and print $1'`; do
-    ln -s $HOME/dotfiles/$file $HOME/$file
+DOT_FILES=( .zshrc )
+
+for file in ${DOT_FILES[@]}
+do
+	ln -s $HOME/dotfiles/$file $HOME/$file
 done
+
+# install oh-my-zsh
+[ ! -d ~/.oh-my-zsh ] && git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
