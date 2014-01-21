@@ -1,3 +1,12 @@
 [user]
 	name = mapyo
 	email = falcon.phantom.spidar.haptic@gmail.com
+[core]
+	editor = vim
+[color]
+	ui = auto
+[alias]
+	co = checkout
+	ci = commit
+	di = diff
+	dc = diff --cached
