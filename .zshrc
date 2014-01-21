@@ -53,6 +53,8 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/X11/bin"
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init - zsh)"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
