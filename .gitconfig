@@ -10,3 +10,5 @@
 	ci = commit
 	di = diff
 	dc = diff --cached
+	fh = fetch
+	st = status
