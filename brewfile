@@ -34,4 +34,6 @@ link libiconv --force
 
 install libmcrypt || true
 
+install autoconf || true
+
 cleanup
