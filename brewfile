@@ -6,6 +6,7 @@ tap phinze/homebrew-cask || true
 update || true
 # Brew Cask
 install brew-cask || true
+# Packages
 install git || true
 install rbenv || true
 install ruby-build || true
@@ -26,4 +27,5 @@ install curl || true
 install libiconv || true
 install libmcrypt || true
 install autoconf || true
-cleanup
+# Cask Packages
+cask install heroku-toolbelt || true
