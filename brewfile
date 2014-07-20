@@ -27,5 +27,6 @@ install curl || true
 install libiconv || true
 install libmcrypt || true
 install autoconf || true
+install mercurial || true
 # Cask Packages
 cask install heroku-toolbelt || true
