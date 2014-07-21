@@ -30,3 +30,4 @@ install autoconf || true
 install mercurial || true
 # Cask Packages
 cask install heroku-toolbelt || true
+cask install atom || true
