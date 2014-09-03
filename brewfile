@@ -28,6 +28,8 @@ install libiconv || true
 install libmcrypt || true
 install autoconf || true
 install mercurial || true
+install chrome-cli || true
+install gawk || true
 # Cask Packages
 cask install heroku-toolbelt || true
 cask install atom || true
