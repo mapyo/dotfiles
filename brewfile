@@ -2,10 +2,15 @@
 tap homebrew/dupes || true
 tap josegonzalez/homebrew-php || true
 tap phinze/homebrew-cask || true
+## http://qiita.com/hereticreader/items/79d9bddb77efaf2ca255
+tap caskroom/versions || true
+
 # Brew Update
 update || true
+
 # Brew Cask
 install brew-cask || true
+
 # Packages
 install git || true
 install rbenv || true
@@ -30,6 +35,8 @@ install autoconf || true
 install mercurial || true
 install chrome-cli || true
 install gawk || true
+
 # Cask Packages
 cask install heroku-toolbelt || true
 cask install atom || true
+cask install java7
