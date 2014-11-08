@@ -18,3 +18,5 @@
     see = browse
     delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
     up = !git fetch -p && git checkout master && git pull origin master && git delete-merged-branches
+[ghq]
+    root = ~/ghq
