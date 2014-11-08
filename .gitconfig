@@ -1,14 +1,20 @@
-[user]
-	name = mapyo
-	email = falcon.phantom.spidar.haptic@gmail.com
+[include]
+    path = .gitconfig.local
 [core]
-	editor = vim
+    pager = nkf -w | LESSCHARSET=utf-8 less
+    excludesfile = $HOME/.gitignore_global
+    editor = /usr/bin/vim -c \"set fenc=utf-8\"
+    quotepath = false
 [color]
-	ui = auto
+    ui = auto
 [alias]
-	co = checkout
-	ci = commit
-	di = diff
-	dc = diff --cached
-	fh = fetch
-	st = status
+    co = checkout
+    ci = commit
+    st = status --branch --short
+    br = branch
+    di = diff
+    dc = diff --cached
+    fh = fetch -p
+    see = browse
+    delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+    up = !git fetch -p && git checkout master && git pull origin master && git delete-merged-branches
