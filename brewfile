@@ -37,6 +37,7 @@ install mercurial || true
 install chrome-cli || true
 install gawk || true
 install peco || true
+install nkf || true
 
 # Cask Packages
 cask install heroku-toolbelt || true
