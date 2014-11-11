@@ -39,6 +39,7 @@ install gawk || true
 install peco || true
 install nkf || true
 install tree || true
+install go || true
 
 # Cask Packages
 cask install heroku-toolbelt || true
