@@ -230,10 +230,6 @@ if [ -z "$TMUX" -a -z "$STY" ]; then
   fi
 fi
 
-# source
-source ~/.zsh/bd.zsh
-#export PATH=$HOME/.nodebrew/current/bin:$PATH
-
 # phpenv
 if [ -d $HOME/.phpenv ]; then
   export PATH="$HOME/.phpenv/bin:$PATH"
@@ -247,3 +243,7 @@ export PATH=$SCALA_HOME/bin:$PATH
 
 # for brew install git
 export PATH="/usr/local/bin:$PATH"
+
+# zsh-bd
+# https://github.com/Tarrasch/zsh-bd
+. $HOME/.zsh/plugins/bd/bd.zsh
