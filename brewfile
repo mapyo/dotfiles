@@ -40,6 +40,7 @@ install peco || true
 install nkf || true
 install tree || true
 install go || true
+install hub || true
 
 # Cask Packages
 cask install heroku-toolbelt || true

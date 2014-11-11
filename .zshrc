@@ -216,6 +216,7 @@ ls_abbrev() {
     fi
 }
 
+# 起動時にtmuxをデフォルトで開くようにする
 if [ -z "$TMUX" -a -z "$STY" ]; then
   if type tmuxx >/dev/null 2>&1; then
     tmuxx
