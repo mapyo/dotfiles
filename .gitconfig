@@ -3,7 +3,7 @@
 [core]
     pager = nkf -w | LESSCHARSET=utf-8 less
     excludesfile = $HOME/.gitignore_global
-    editor = /usr/bin/vim -c \"set fenc=utf-8\"
+    editor = vim -c \"set fenc=utf-8\"
     quotepath = false
 [color]
     ui = auto
