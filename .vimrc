@@ -9,7 +9,9 @@ endif
 
 set runtimepath+=~/.vim/puppet-syntax-vim/syntax/puppet.vim
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+call neobundle#end()
 
 filetype plugin indent on     " Required!
 
