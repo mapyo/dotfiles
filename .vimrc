@@ -172,7 +172,10 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 
 " vim-auto-save
-let g:auto_save=1
+" https://github.com/vim-scripts/vim-auto-save/blob/master/README.md
+let g:auto_save=1 " 自動保存を有効にする
+let g:auto_save_in_insert_mode = 0 " insertモードでの自動保存をしない
+let g:auto_save_silent = 1 " autosaveしたというメッセージを毎回出さない
 
 """""" neocomplcache start
 let g:NeoComplCache_EnableAtStartup=1
