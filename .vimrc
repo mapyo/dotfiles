@@ -241,7 +241,7 @@ nnoremap <silent> ,vd ivar_dump();<Esc>
 
 " コピーした時にクリップボードに入れる
 " macvimでしか動いていない
-set clipboard=unnamed,autoselect
+set clipboard=unnamed
 
 "タブ関係の設定start
 set expandtab "タブ入力を複数の空白入力に置き換える
