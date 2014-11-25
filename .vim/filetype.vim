@@ -8,5 +8,6 @@ augroup filetypedetect
   au BufNewFile,BufRead *.js     setlocal tabstop=2 shiftwidth=2
   au BufNewFile,BufRead *.coffee setlocal tabstop=2 shiftwidth=2
   au BufNewFile,BufRead *.sh     setlocal tabstop=2 shiftwidth=2
-  au BufNewFile,BufRead *.json     setlocal tabstop=2 shiftwidth=2
+  au BufNewFile,BufRead *.json   setlocal tabstop=2 shiftwidth=2
+  au BufNewFile,BufRead *.html   setlocal tabstop=2 shiftwidth=2
 augroup END
