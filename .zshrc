@@ -231,12 +231,6 @@ if [ -z "$TMUX" -a -z "$STY" ]; then
   fi
 fi
 
-# phpenv
-if [ -d $HOME/.phpenv ]; then
-  export PATH="$HOME/.phpenv/bin:$PATH"
-  eval "$(phpenv init -)"
-fi
-
 # for scala
 export PATH=$PATH:$HOME/bin
 export SCALA_HOME=~/.svm/current/rt
