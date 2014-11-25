@@ -1,6 +1,5 @@
 # Add Repository
 tap homebrew/dupes || true
-tap josegonzalez/homebrew-php || true
 tap phinze/homebrew-cask || true
 tap peco/peco || true
 ## http://qiita.com/hereticreader/items/79d9bddb77efaf2ca255
@@ -16,7 +15,6 @@ install brew-cask || true
 install git || true
 install rbenv || true
 install ruby-build || true
-install --HEAD phpenv || true
 install autoconf || true
 install pkg-config || true
 install openssl || true
