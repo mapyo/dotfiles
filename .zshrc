@@ -248,3 +248,7 @@ export PATH="/usr/local/bin:$PATH"
 # zsh-bd
 # https://github.com/Tarrasch/zsh-bd
 . $HOME/.zsh/plugins/bd/bd.zsh
+
+# local setting
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
