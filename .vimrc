@@ -96,6 +96,18 @@ endfunction
 au BufRead,BufNewFile,BufReadPre *.coffee,*.js call JasmineSetting()
 
 "------------------------------------
+" quickrunでPHPUnitを実行する
+"------------------------------------
+augroup QuickRunPHPUnit
+  autocmd!
+  autocmd BufWinEnter,BufNewFile *test.php set filetype=php.unit
+augroup END
+" 初期化
+let g:quickrun_config = {}
+" PHPUnit
+let g:quickrun_config['php.unit'] = {'command': 'phpunit'}
+
+"------------------------------------
 " indent_guides
 "------------------------------------
 " インデントの深さに色を付ける
