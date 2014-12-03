@@ -53,7 +53,12 @@ NeoBundle 'vim-scripts/matchit.zip' " 対応するhtmlタグへ移動 http://blo
 NeoBundle 'toyamarinyon/vim-swift' " swift!!
 NeoBundle 'derekwyatt/vim-scala' " scala syntax highlight
 NeoBundle 'PDV--phpDocumentor-for-Vim' " phpdocumentor http://mofumofu3n.hatenablog.jp/entry/2013/09/22/052351
-" NeoBundle 'sifue/smarty.vim' " smartyのSyntaxハイライト
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'mac' : 'make -f make_mac.mak',
+\    },
+\ } " quickrunを非同期に実行する為
+
 
 """ for PDV--phpDocumentor-for-Vim
 """ http://mofumofu3n.hatenablog.jp/entry/2013/09/22/052351
@@ -96,16 +101,27 @@ endfunction
 au BufRead,BufNewFile,BufReadPre *.coffee,*.js call JasmineSetting()
 
 "------------------------------------
-" quickrunでPHPUnitを実行する
+" quickrun vimproc でPHPUnitを非同期実行する
+" http://www.karakaram.com/quickrun-phpunit
 "------------------------------------
 augroup QuickRunPHPUnit
   autocmd!
-  autocmd BufWinEnter,BufNewFile *test.php set filetype=php.unit
+  autocmd BufWinEnter,BufNewFile *Test.php set filetype=php.unit
 augroup END
-" 初期化
+
 let g:quickrun_config = {}
-" PHPUnit
-let g:quickrun_config['php.unit'] = {'command': 'phpunit'}
+let g:quickrun_config['_'] = {}
+let g:quickrun_config['_']['runner'] = 'vimproc'
+let g:quickrun_config['_']['runner/vimproc/updatetime'] = 100
+
+let g:quickrun_config['php.unit'] = {}
+let g:quickrun_config['php.unit']['outputter/buffer/split'] = 'vertical 35'
+let g:quickrun_config['php.unit']['command'] = 'phpunit'
+let g:quickrun_config['php.unit']['cmdopt'] = ''
+let g:quickrun_config['php.unit']['exec'] = '%c %o %s'
+
+
+
 
 "------------------------------------
 " indent_guides
