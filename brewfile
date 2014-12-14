@@ -39,6 +39,7 @@ install nkf || true
 install tree || true
 install go || true
 install hub || true
+install icu4c || true
 
 # Cask Packages
 cask install heroku-toolbelt || true

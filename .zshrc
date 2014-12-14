@@ -246,3 +246,5 @@ export PATH="/usr/local/bin:$PATH"
 # local setting
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
+# phpbrew
+[ -f ~/.phpbrew/bashrc ] && source ~/.phpbrew/bashrc
