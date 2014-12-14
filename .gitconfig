@@ -20,3 +20,5 @@
     up = !git fetch -p && git checkout master && git pull origin master && git delete-merged-branches
 [ghq]
     root = ~/ghq
+[pull]
+	rebase = preserve
