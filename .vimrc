@@ -50,7 +50,6 @@ NeoBundle 'stephpy/vim-php-cs-fixer' " php-cs-fixerをvimで
 NeoBundle 'tomtom/tcomment_vim' " コメントアウト http://qiita.com/alpaca_taichou/items/211cd62bee84c59ca480
 NeoBundle 'mattn/emmet-vim' " emmet-vim http://qiita.com/muran001/items/9ce24525b3285678acc3
 NeoBundle 'vim-scripts/matchit.zip' " 対応するhtmlタグへ移動 http://blog.thrbrd.com/plugin/howto-matchit.html
-NeoBundle 'toyamarinyon/vim-swift' " swift!!
 NeoBundle 'derekwyatt/vim-scala' " scala syntax highlight
 NeoBundle 'PDV--phpDocumentor-for-Vim' " phpdocumentor http://mofumofu3n.hatenablog.jp/entry/2013/09/22/052351
 NeoBundle 'Shougo/vimproc.vim', {
