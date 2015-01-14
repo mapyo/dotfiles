@@ -145,8 +145,7 @@ export GOPATH="$HOME/.go"
 export PATH="$PATH:$GOPATH/bin"
 
 # for android
-#export PATH="$PATH:/Applications/android-sdk/sdk/platform-tools"
-export PATH="$PATH:/Applications/Android Studio.app/sdk/platform-tools"
+export PATH="$PATH:/Applications/android-sdk/sdk/platform-tools"
 
 # for composer
 export PATH="$PATH:$HOME/.composer/vendor/bin"
