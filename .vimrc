@@ -52,6 +52,7 @@ NeoBundle 'mattn/emmet-vim' " emmet-vim http://qiita.com/muran001/items/9ce24525
 NeoBundle 'vim-scripts/matchit.zip' " 対応するhtmlタグへ移動 http://blog.thrbrd.com/plugin/howto-matchit.html
 NeoBundle 'derekwyatt/vim-scala' " scala syntax highlight
 NeoBundle 'PDV--phpDocumentor-for-Vim' " phpdocumentor http://mofumofu3n.hatenablog.jp/entry/2013/09/22/052351
+NeoBundle 'godlygeek/tabular' " tabular
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
 \     'mac' : 'make -f make_mac.mak',
