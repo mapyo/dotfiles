@@ -76,8 +76,7 @@ export EDITOR="/usr/bin/vim"
 
 ## for alias
 
-# yankがちゃんと動かなかったので一旦コメントアウト
-# alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+# alias vim='/Applications/MacVim.app/Contents/MacOS/mvim -v'
 
 alias sb="open -a 'Sublime Text 2'"
 alias mvim="open -a macvim"
