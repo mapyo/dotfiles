@@ -11,7 +11,7 @@
     co = checkout
     ci = commit
     st = status --branch --short
-    br = branch
+    br = branch -vv
     di = diff
     dc = diff --cached
     fh = fetch -p
