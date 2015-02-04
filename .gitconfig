@@ -23,3 +23,5 @@
     root = ~/ghq
 [pull]
 	rebase = preserve
+[push]
+	default = simple
