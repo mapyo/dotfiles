@@ -100,6 +100,7 @@ alias vr="vagrant reload"
 
 
 alias be="bundle exec"
+alias pbcopy_chomp="ruby -pe 'chomp' | pbcopy"
 
 
 ## 履歴を残す
