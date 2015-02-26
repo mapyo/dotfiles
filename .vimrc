@@ -288,7 +288,7 @@ set number
 "新しい行のインデントを現在行と同じにする
 set autoindent
 
-set history=50" keep 50 lines of command line history
+set history=100" keep 50 lines of command line history
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
