@@ -58,10 +58,12 @@ NeoBundle 'Shougo/vimproc.vim', {
 \     'mac' : 'make -f make_mac.mak',
 \    },
 \ } " quickrunを非同期に実行する為
-NeoBundle 'typescript-vim' " typescript
+NeoBundle 'leafgarland/typescript-vim' " typescript
+" NeoBundle 'clausreinke/typescript-tools' " typescript
 
 """ for typescript
 au BufRead,BufNewFile,BufReadPre *.ts  set filetype=typescript
+autocmd FileType typescript setlocal sw=2 sts=2 ts=2 et
 
 
 """ for PDV--phpDocumentor-for-Vim
