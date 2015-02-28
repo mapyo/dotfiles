@@ -60,10 +60,11 @@ NeoBundle 'Shougo/vimproc.vim', {
 \ } " quickrunを非同期に実行する為
 NeoBundle 'leafgarland/typescript-vim' " typescript
 " NeoBundle 'clausreinke/typescript-tools' " typescript
+NeoBundle 'jason0x43/vim-js-indent' " typescriptでインデントされない
 
 """ for typescript
 au BufRead,BufNewFile,BufReadPre *.ts  set filetype=typescript
-autocmd FileType typescript setlocal sw=2 sts=2 ts=2 et
+autocmd FileType typescript setlocal sw=4 sts=4 ts=4 et
 
 
 """ for PDV--phpDocumentor-for-Vim
