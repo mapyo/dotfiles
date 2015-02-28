@@ -140,10 +140,7 @@ export PATH="$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
 
 # pyenv
-#export PATH="$HOME/.pyenv/bin:$PATH"
-#export PATH="$HOME/.pyenv/shims:$PATH"
-#eval "$(pyenv init -)"
-#alias http='~/.pyenv/shims/http'
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # for go
 export PATH="$PATH:/usr/local/go/bin"
