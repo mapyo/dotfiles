@@ -66,7 +66,7 @@ nnoremap <silent>,pd :call PhpDocSingle()<CR>
 
 
 """ for git-browse
-command! -nargs=* -range GitBrowseRemote !git browse-remote --rev -L<line1>,<line2> <f-args> -- %
+command! -nargs=* -range GB !git browse-remote --rev -L<line1>,<line2> <f-args> -- %
 
 """"" for coffee
 " http://qiita.com/alpaca_taichou/items/fb442cfa78f91634cfaa
