@@ -11,4 +11,5 @@ augroup filetypedetect
   au BufNewFile,BufRead *.json   setlocal tabstop=2 shiftwidth=2
   au BufNewFile,BufRead *.html   setlocal tabstop=2 shiftwidth=2
   au BufNewFile,BufRead *.yml    setlocal tabstop=2 shiftwidth=2
+  au BufNewFile,BufRead *.erb    setlocal tabstop=2 shiftwidth=2
 augroup END
