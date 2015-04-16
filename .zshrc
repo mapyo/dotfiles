@@ -105,8 +105,8 @@ alias pbcopy_chomp="ruby -pe 'chomp' | pbcopy"
 
 ## 履歴を残す
 HISTFILE=$HOME/.zsh_history
-export HISTSIZE=1000
-export SAVEHIST=100000
+export HISTSIZE=10000
+export SAVEHIST=1000000
 # 重複を記録しない
 setopt hist_ignore_dups
 # 履歴の共有
