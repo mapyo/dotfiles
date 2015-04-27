@@ -79,7 +79,7 @@ export EDITOR="/usr/bin/vim"
 # alias vim='/Applications/MacVim.app/Contents/MacOS/mvim -v'
 
 alias sb="open -a 'Sublime Text 2'"
-alias mvim="open -a macvim"
+alias mvim="open -a MacVim\ \(20150304\)"
 alias fg="find ./ -path \"./userdata\" -prune -o -name '*' | xargs grep -n"
 alias gd="git di"
 alias gs="git st"
