@@ -91,12 +91,16 @@ alias gb="git br"
 alias gu="git up"
 alias sha="git rev-parse @"
 alias hp="hub pull-request -o"
+
 alias vu="vagrant up"
 alias vs="vagrant ssh"
 alias vst="vagrant status"
 alias vh="vagrant halt"
 alias vd="vagrant destroy"
 alias vr="vagrant reload"
+
+alias dc="docker"
+alias dcc="docker-compose"
 
 
 alias be="bundle exec"
