@@ -61,6 +61,10 @@ NeoBundle 'Shougo/vimproc.vim', {
 NeoBundle 'leafgarland/typescript-vim' " typescript
 " NeoBundle 'clausreinke/typescript-tools' " typescript
 NeoBundle 'jason0x43/vim-js-indent' " typescriptでインデントされない
+NeoBundle 'nginx.vim' " ref. http://blog.glidenote.com/blog/2012/04/08/nginx.vim/
+
+""" for nginx.vim
+au BufRead,BufNewFile nginx.conf set ft=nginx
 
 """ for typescript
 au BufRead,BufNewFile,BufReadPre *.ts  set filetype=typescript
