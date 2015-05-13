@@ -1,47 +1,98 @@
-# Add Repository
-tap homebrew/dupes || true
-tap phinze/homebrew-cask || true
-tap peco/peco || true
-## http://qiita.com/hereticreader/items/79d9bddb77efaf2ca255
-tap caskroom/versions || true
-
-# Brew Update
-update || true
-
-# Brew Cask
-install brew-cask || true
-
-# Packages
-install git || true
-install rbenv || true
-install ruby-build || true
-install autoconf || true
-install pkg-config || true
-install openssl || true
-install fontforge || true
-install fontconfig || true
-install freetype || true
-install libjpeg || true
-install libtiff || true
-install gettext || true
-install libpng || true
-install yasm || true
-install zlib || true
-install curl || true
-install libiconv || true
-install libmcrypt || true
-install autoconf || true
-install mercurial || true
-install chrome-cli || true
-install gawk || true
-install peco || true
-install nkf || true
-install tree || true
-install go || true
-install hub || true
-install icu4c || true
-
-# Cask Packages
-cask install heroku-toolbelt || true
-cask install atom || true
-cask install java7
+tap 'caskroom/cask'
+tap 'caskroom/versions'
+tap 'homebrew/bundle'
+tap 'homebrew/dupes'
+tap 'homebrew/versions'
+tap 'josegonzalez/php'
+tap 'peco/peco'
+brew 'aspell'
+brew 'autoconf'
+brew 'autojump'
+brew 'automake'
+brew 'bison'
+brew 'boot2docker'
+brew 'brew-cask'
+brew 'chrome-cli'
+brew 'cloog'
+brew 'colordiff'
+brew 'curl'
+brew 'docker'
+brew 'enchant'
+brew 'fig'
+brew 'fontconfig'
+brew 'fontforge'
+brew 'freetype'
+brew 'fuse4x'
+brew 'fuse4x-kext'
+brew 'gawk'
+brew 'gdbm'
+brew 'geoip'
+brew 'gettext'
+brew 'git'
+brew 'git-ftp'
+brew 'glib'
+brew 'gmp'
+brew 'gnu-sed'
+brew 'gnutls'
+brew 'go'
+brew 'httpie'
+brew 'hub'
+brew 'icu4c'
+brew 'imagemagick'
+brew 'imap-uw'
+brew 'isl'
+brew 'jpeg'
+brew 'jq'
+brew 'less'
+brew 'libevent'
+brew 'libffi'
+brew 'libgcrypt'
+brew 'libgpg-error'
+brew 'libiconv'
+brew 'libmpc'
+brew 'libpng'
+brew 'libtasn1'
+brew 'libtiff'
+brew 'libtool'
+brew 'libxml2'
+brew 'libxslt'
+brew 'libyaml'
+brew 'mcrypt'
+brew 'mercurial'
+brew 'mhash'
+brew 'mpfr'
+brew 'mysql55'
+brew 'nettle'
+brew 'nkf'
+brew 'openssl'
+brew 'pcre'
+brew 'peco'
+brew 'phantomjs'
+brew 'phpenv', args: ['HEAD']
+brew 'pkg-config'
+brew 'pup'
+brew 'pwgen'
+brew 'pyenv'
+brew 'rbenv'
+brew 'readline'
+brew 'reattach-to-user-namespace'
+brew 'redis'
+brew 'rsync'
+brew 'ruby-build'
+brew 'sbt'
+brew 'scala'
+brew 'sl'
+brew 'sqlite'
+brew 'tig'
+brew 'tmux'
+brew 'tree'
+brew 'vim'
+brew 'wget'
+brew 'xz'
+brew 'yasm'
+brew 'zlib'
+brew 'zsh'
+cask 'atom'
+cask 'heroku-toolbelt'
+cask 'java6'
+cask 'java7'
