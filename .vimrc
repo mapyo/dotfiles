@@ -3,25 +3,29 @@
 set nocompatible               " Be iMproved
 filetype off                   " Required!
 
+" neobundle settings {{{
 if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+  set nocompatible
+  " neobundle をインストールしていない場合は自動インストール
+  if !isdirectory(expand("~/.vim/bundle/neobundle.vim/"))
+    echo "install neobundle..."
+    " vim からコマンド呼び出しているだけ neobundle.vim のクローン
+    :call system("git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim")
+  endif
+  " runtimepath の追加は必須
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 set runtimepath+=~/.vim/puppet-syntax-vim/syntax/puppet.vim
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+
+call neobundle#begin(expand('~/.vim/bundle'))
+let g:neobundle_default_git_protocol='https'
+
+
+
 NeoBundleFetch 'Shougo/neobundle.vim'
-call neobundle#end()
 
-filetype plugin indent on     " Required!
-
-" Installation check.
-if neobundle#exists_not_installed_bundles()
-    echomsg 'Not installed bundles : ' .
-                \ string(neobundle#get_not_installed_bundle_names())
-    echomsg 'Please execute ":NeoBundleInstall" command.'
-    "finish
-endif
 
 "GitHubリポジトリにあるプラグインを利用場合
 "http://qiita.com/hyshhryk/items/4936c4412daa866daf7d
@@ -62,6 +66,24 @@ NeoBundle 'leafgarland/typescript-vim' " typescript
 " NeoBundle 'clausreinke/typescript-tools' " typescript
 NeoBundle 'jason0x43/vim-js-indent' " typescriptでインデントされない
 NeoBundle 'nginx.vim' " ref. http://blog.glidenote.com/blog/2012/04/08/nginx.vim/
+NeoBundle 'nanotech/jellybeans.vim'
+" http://qiita.com/alpaca_taichou/items/fb442cfa78f91634cfaa
+" syntax + 自動compile
+NeoBundle 'kchmck/vim-coffee-script'
+" js BDDツール
+NeoBundle 'claco/jasmine.vim'
+" indentの深さに色を付ける
+NeoBundle 'nathanaelkane/vim-indent-guides'
+
+
+NeoBundleCheck
+call neobundle#end()
+
+filetype plugin indent on     " Required!
+""" for jellybeans
+set t_Co=256
+syntax on
+colorscheme jellybeans
 
 """ for nginx.vim
 au BufRead,BufNewFile nginx.conf set ft=nginx
@@ -79,14 +101,6 @@ nnoremap <silent>,pd :call PhpDocSingle()<CR>
 """ for git-browse
 command! -nargs=* -range GB !git browse-remote --rev -L<line1>,<line2> <f-args> -- %
 
-""""" for coffee
-" http://qiita.com/alpaca_taichou/items/fb442cfa78f91634cfaa
-" syntax + 自動compile
-NeoBundle 'kchmck/vim-coffee-script'
-" js BDDツール
-NeoBundle 'claco/jasmine.vim'
-" indentの深さに色を付ける
-NeoBundle 'nathanaelkane/vim-indent-guides'
 
 """"" for coffee
 " http://qiita.com/alpaca_taichou/items/fb442cfa78f91634cfaa
