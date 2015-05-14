@@ -253,3 +253,6 @@ export PATH="/usr/local/bin:$PATH"
 
 # phpbrew
 [ -f ~/.phpbrew/bashrc ] && source ~/.phpbrew/bashrc
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
