@@ -1,0 +1,3 @@
+colorscheme slate
+set noimdisableactivate
+
