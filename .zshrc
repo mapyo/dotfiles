@@ -161,6 +161,12 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 alias javac='javac -J-Dfile.encoding=UTF-8'
 
+# for git
+alias gdc='git dc'
+
+# for android
+alias adb-restart='adb kill-server; adb start-server'
+
 # for peco
 # ghqのlist検索
 alias p='cd $(ghq list -p | peco)'
