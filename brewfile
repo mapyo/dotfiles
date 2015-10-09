@@ -88,6 +88,7 @@ brew 'yasm'
 brew 'zlib'
 brew 'zsh'
 brew 'ghq'
+brew 'direnv'
 
 cask 'atom'
 cask 'heroku-toolbelt'
