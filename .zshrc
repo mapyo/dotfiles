@@ -89,7 +89,6 @@ alias gup="git up"
 alias gupd="git upd"
 alias gpr="git pr"
 alias gb="git br"
-alias gu="git up"
 alias sha="git rev-parse @"
 alias hp="hub pull-request -o"
 
