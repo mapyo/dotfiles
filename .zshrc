@@ -188,6 +188,8 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
+# jsonを整形してvimで開く
+jqless() { jq . $* | vim -c "set ft=json" - }
 
 #source /Users/usr0600285/.zsh/zaw/zaw.zsh
 
