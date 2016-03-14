@@ -108,6 +108,10 @@ alias dcc="docker-compose"
 alias be="bundle exec"
 alias pbcopy_chomp="ruby -pe 'chomp' | pbcopy"
 
+# adb-peco
+alias adb="adbp"
+alias pidcat='pidcatp'
+
 
 ## 履歴を残す
 HISTFILE=$HOME/.zsh_history
