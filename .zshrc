@@ -197,6 +197,9 @@ bindkey '^r' peco-select-history
 # jsonを整形してvimで開く
 jqless() { jq . $* | vim -c "set ft=json" - }
 
+# urldecodeしてくれるやつ
+urldecode() { nkf --url-input  $* }
+
 #source /Users/usr0600285/.zsh/zaw/zaw.zsh
 
 # zshにてcd後に自動的にlsを行うchpwd関数
