@@ -1,0 +1,71 @@
+#! /bin/bash
+
+## This script is for taking a screen shot of an Android device.
+## If possible, it tries to resize the image file and then copy to the clipboard.
+##
+## The script passes unrecognized arguments to adb command, which means you can specify "-e" or "-d"
+## to select which device to take a screenshot of.
+
+if [ -z $(which adb) ]; then
+  echo "Error. adb must be installed and in PATH." 1>&2
+  exit 1
+fi
+
+usage_exit() {
+    echo "Usage: $0 [-t target_dir] [arguments to adb]..."
+    exit 1
+}
+
+check_ret() {
+    if [ $? -ne 0 ]; then
+        echo "An error occurred. Exit." 1>&2
+        exit 1
+    fi
+}
+
+file=screenshot_$(date "+%Y%m%d%H%M%S").png
+dir=/sdcard
+
+case $1 in
+    -t) dir=$2
+        shift 2
+        ;;
+    -h) usage_exit
+        ;;
+esac
+
+remote=${dir}/${file}
+adb $* shell screencap -p ${remote} &&
+adb $* pull ${remote} /tmp/ &&
+adb $* shell rm ${remote} && printf "Copied ${file}\n"
+
+check_ret()
+
+if [ -z $(which convert) ]; then
+    echo "ImageMagick seems not be installed on this computer. Just exit."
+    exit 0
+fi
+
+echo "Do you want to create a smaller version of the image? (To quit, just input 'q')"
+read -p "Specify resize ratio [30%]: " size
+case $size in
+    [qQ]) exit;;
+    *) 
+esac
+
+if [ -z "${size}" ]; then
+    size="30%"
+fi
+small_file=${file%%.png}_s.png
+convert -resize ${size} /tmp/${file} /tmp/${small_file} && printf "Created /tmp/${small_file} with the ${size} size of the original.\n"
+
+check_ret()
+
+if [ -z $(which osascript) ]; then
+    echo "osascript seems not be installed on this computer (maybe it is not Mac OS?). Just exit."
+    exit 0
+fi
+
+osascript -e 'on run args' -e 'set thisFile to item 1 of args' -e 'set the clipboard to (read thisFile as «class PNGf»)' -e return -e end /tmp/${small_file} && echo "Copied to clipboard."
+
+rm /tmp/${file} /tmp/${small_file}

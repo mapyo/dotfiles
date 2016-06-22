@@ -1,0 +1,46 @@
+#!/bin/sh
+ 
+set -e
+ 
+chrome-cli execute '(function () {
+    return [
+        location.hostname,
+        location.pathname.split("/")[1],
+        location.pathname.split("/")[2],
+        document.title,
+        document.getElementsByClassName("css-truncate-target")[3].innerHTML
+    ].join("\n");
+})()' | {
+    read host
+    read user
+    read repo
+    read title
+    read pr_ref
+ 
+    remote_url=$(git config remote.origin.url)
+    remote_url=${remote_url%.git}
+ 
+    if [   "$remote_url" != "git@$host:$user/$repo" \
+        -a "$remote_url" != "https://$host/$user/$repo" \
+        -a "$remote_url" != "git://$host/$user/$repo" ]; then
+        echo "Remote differs: $remote_url VS $host,$user,$repo" >&2
+        exit 1
+    fi
+ 
+    pr_branch=${pr_ref#*:}
+    pr_user=${pr_ref%:*}
+    if [ "$pr_user" = "$pr_ref" ]; then
+        pr_user=
+    fi
+ 
+    echo "$title ($pr_ref)"
+ 
+    if [ -n "$pr_user" ]; then
+        git remote add -f "$pr_user" "https://$host/$pr_user/$repo" || git remote update "$pr_user"
+        git checkout -b $pr_branch --track $pr_user/$pr_branch
+    else
+        git remote update origin
+        git checkout $pr_branch
+        git pull origin $pr_branch
+    fi
+}
