@@ -1,3 +1,6 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule "genymotion-peco"]
+	path = genymotion-peco
+	url = git@github.com:sys1yagi/genymotion-peco.git
