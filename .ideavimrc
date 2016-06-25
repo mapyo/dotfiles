@@ -2,3 +2,5 @@ map <c-]> <esc>
 vmap <c-]> <esc>
 cmap <c-]> <esc>
 imap <c-]> <esc>
+
+set clipboard=unnamed
