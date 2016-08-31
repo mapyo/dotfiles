@@ -109,7 +109,8 @@ alias be="bundle exec"
 alias pbcopy_chomp="ruby -pe 'chomp' | pbcopy"
 
 # adb-peco
-# alias adb="adbp"
+# ref. https://github.com/tomorrowkey/adb-peco
+alias adbp="adb-peco"
 # alias pidcat='pidcatp'
 
 
