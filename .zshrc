@@ -263,6 +263,7 @@ export PATH=$SCALA_HOME/bin:$PATH
 
 # for brew install git
 export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 
 # zsh-bd
 # https://github.com/Tarrasch/zsh-bd
