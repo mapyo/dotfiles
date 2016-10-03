@@ -289,3 +289,12 @@ export PATH=$PATH:$HOME/dotfiles/bin
 
 # adb_peco
 [ -f ~/dotfiles/genymotion-peco/bin/genymotion_peco.sh ] && source ~/dotfiles/genymotion-peco/bin/genymotion_peco.sh
+
+# for kotlin
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export JDK_16=`/usr/libexec/java_home -v 1.6`
+export JDK_17=`/usr/libexec/java_home -v 1.7`
+export JDK_18=`/usr/libexec/java_home -v 1.8`
+
+export ANT_OPTS="-Xmx1024m -XX:MaxPermSize=512m"
