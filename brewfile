@@ -89,6 +89,7 @@ brew 'zsh'
 brew 'ghq'
 brew 'direnv'
 brew 'mysql56'
+brew 'kotlin'
 
 cask 'atom'
 cask 'heroku-toolbelt'
