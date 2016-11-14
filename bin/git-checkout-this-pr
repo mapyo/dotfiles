@@ -22,7 +22,8 @@ chrome-cli execute '(function () {
  
     if [   "$remote_url" != "git@$host:$user/$repo" \
         -a "$remote_url" != "https://$host/$user/$repo" \
-        -a "$remote_url" != "git://$host/$user/$repo" ]; then
+        -a "$remote_url" != "git://$host/$user/$repo" \
+        -a "$remote_url" != "ssh://git@$host/$user/$repo" ]; then
         echo "Remote differs: $remote_url VS $host,$user,$repo" >&2
         exit 1
     fi
