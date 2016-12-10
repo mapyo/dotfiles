@@ -278,9 +278,6 @@ export PATH="/usr/local/sbin:$PATH"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# direnv
-eval "$(direnv hook zsh)"
-
 # Android Stuido のエラー対策
 export PATH="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib:$PATH"
 
