@@ -295,10 +295,3 @@ export JDK_17=`/usr/libexec/java_home -v 1.7`
 export JDK_18=`/usr/libexec/java_home -v 1.8`
 
 export ANT_OPTS="-Xmx1024m -XX:MaxPermSize=512m"
-
-
-# tmuxかつzshでペーストするとエラーが出る対応
-# ref. https://github.com/tmux/tmux/issues/223
-if [ ${TMUX} ]; then
- unset zle_bracketed_paste
-fi
