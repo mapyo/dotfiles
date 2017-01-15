@@ -3,7 +3,6 @@ tap 'caskroom/versions'
 tap 'homebrew/bundle'
 tap 'homebrew/dupes'
 tap 'homebrew/versions'
-tap 'peco/peco'
 tap 'motemen/ghq'
 
 brew 'aspell'
