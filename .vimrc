@@ -31,11 +31,12 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "http://qiita.com/hyshhryk/items/4936c4412daa866daf7d
 NeoBundle 'tpope/vim-fugitive'
 "GitHub以外のGitリポジトリにあるプラグインを利用する場合
-NeoBundle 'git://git.wincent.com/command-t.git'
+" vimを立ち上げる度に何度もインストールを聞いてくるのでコメントアウトする
+" NeoBundle 'https://git.wincent.com/command-t.git'
 "補完
 NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'kien/ctrlp.vim' " ファイル開く時にctrl-pで開ける便利なやつ。
-NeoBundle 'git://github.com/Shougo/unite.vim.git' " unite!!!
+NeoBundle 'https://github.com/Shougo/unite.vim.git' " unite!!!
 NeoBundle 'Shougo/neomru.vim' " 履歴を見る時にどうやら必要っぽい
 NeoBundle 'tell-k/vim-browsereload-mac' "vimで保存した時に自動的にブラウザをリロードしてくれるやつ。
 NeoBundle 'surround.vim' "タグの編集をやりやすくしてくれるやつ
