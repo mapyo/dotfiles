@@ -156,6 +156,7 @@ export PATH="$PATH:$GOPATH/bin"
 
 # for android
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
+export PATH="$PATH:$HOME/Library/Android/sdk/ndk-bundle"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 
 
