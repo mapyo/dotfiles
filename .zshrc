@@ -145,10 +145,6 @@ setopt auto_cd
 # for brew
 #export PATH=$PATH:/usr/local/Cellar/mysql/5.6.13/bin
 
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.rbenv/shims:$PATH"
-eval "$(rbenv init -)"
 
 # pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
@@ -295,3 +291,9 @@ export JDK_17=`/usr/libexec/java_home -v 1.7`
 export JDK_18=`/usr/libexec/java_home -v 1.8`
 
 export ANT_OPTS="-Xmx1024m -XX:MaxPermSize=512m"
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
+eval "$(rbenv init -)"
+
