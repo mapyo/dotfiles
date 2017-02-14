@@ -262,6 +262,10 @@ export PATH=$SCALA_HOME/bin:$PATH
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
+# for brew openssl
+export PATH="/usr/local/opt/openssl/bin/openssl:$PATH"
+
+
 # zsh-bd
 # https://github.com/Tarrasch/zsh-bd
 . $HOME/.zsh/plugins/bd/bd.zsh
@@ -298,3 +302,4 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
 
+export PATH=$PATH:$HOME/bin
