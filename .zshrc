@@ -303,3 +303,19 @@ export PATH="$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
 
 export PATH=$PATH:$HOME/bin
+
+# Decompile Java classes recursively keeping hierarchy
+jadr() {
+  jad -8 -s java -d $2 -r $1/**/*.class
+}
+
+# Decompile Android application
+deapk() {
+  local dst=${${1##*/}%%.*}
+  dst+=".depackaged.`date +"%Y%m%d%H%M"`"
+  unzip $1 -d $dst
+  d2j-dex2jar -o ${dst}/classes-dex2jar.jar ${dst}/classes.dex
+  mkdir -p ${dst}/classes
+  unzip ${dst}/classes-dex2jar.jar -d ${dst}/classes
+  jadr ${dst} ${dst}/src
+}
