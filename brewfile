@@ -88,6 +88,7 @@ brew 'ghq'
 brew 'mysql56'
 brew 'kotlin'
 brew 'heroku-toolbelt'
+brew 'graphviz'
 
 cask 'java6'
 cask 'java7'
