@@ -319,3 +319,23 @@ deapk() {
   unzip ${dst}/classes-dex2jar.jar -d ${dst}/classes
   jadr ${dst} ${dst}/src
 }
+
+
+# Notify time-consuming commands
+# ref. https://qiita.com/ganmacs/items/6d2f39903cfabdb49b46
+function notify_precmd {
+    prev_command_status=$?
+
+    if [[ "$TTYIDLE" -gt 1 ]]; then
+        notify_title=$([ "$prev_command_status" -eq 0 ] && echo "Command succeeded \U1F646" || echo "Command failed \U1F645")
+        osascript -e "display notification \"$prev_command\" with title \"$notify_title\""
+    fi
+}
+
+function store_command {
+  prev_command=$2
+}
+
+autoload -Uz add-zsh-hook
+add-zsh-hook preexec store_command
+add-zsh-hook precmd notify_precmd
