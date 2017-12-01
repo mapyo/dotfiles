@@ -339,3 +339,6 @@ function store_command {
 autoload -Uz add-zsh-hook
 add-zsh-hook preexec store_command
 add-zsh-hook precmd notify_precmd
+
+# for pokemon
+export PATH="$HOME/.Pokemon-Terminal:$PATH"
