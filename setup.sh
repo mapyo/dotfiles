@@ -1,7 +1,7 @@
 #!/bin/bash
 # https://github.com/yuroyoro/dotfiles/blob/master/setup.sh
 
-DOT_FILES=( .zshrc .zshrc.local .zsh .gitconfig .gitignore_global .tmux.conf .tmux .vimrc .gvimrc .vim .ideavimrc)
+DOT_FILES=( .zshrc .zshrc.local .zsh .gitconfig .gitignore_global .tmux.conf .tmux .vimrc .gvimrc .vim .ideavimrc .editorconfig)
 
 for file in ${DOT_FILES[@]}
 do
