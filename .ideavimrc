@@ -4,3 +4,4 @@ cmap <c-]> <esc>
 imap <c-]> <esc>
 
 set clipboard=unnamed
+set noeol
