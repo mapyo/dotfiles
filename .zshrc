@@ -303,6 +303,7 @@ export PATH="$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
 
 export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$GOPATH/bin
 
 # Decompile Java classes recursively keeping hierarchy
 jadr() {
