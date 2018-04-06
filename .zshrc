@@ -149,11 +149,6 @@ setopt auto_cd
 # pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
-# for go
-export PATH="$PATH:/usr/local/go/bin"
-export GOPATH="$HOME/.go"
-export PATH="$PATH:$GOPATH/bin"
-
 # for android
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 export PATH="$PATH:$HOME/Library/Android/sdk/ndk-bundle"
@@ -343,3 +338,20 @@ add-zsh-hook precmd notify_precmd
 
 # for pokemon
 export PATH="$HOME/.Pokemon-Terminal:$PATH"
+
+# for go
+export PATH="$PATH:/usr/local/go/bin"
+
+# goenv
+eval "$(goenv init -)"
+export GOROOT=$(go env GOROOT)
+export GOPATH="$HOME/.go"
+export GOBIN="$GOPATH/bin"
+export PATH="$GOBIN:$GOROOT/bin:$PATH"
+
+# direnv
+eval "$(direnv hook zsh)"
+
+# Google Cloud SDK
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
