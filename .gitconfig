@@ -32,3 +32,5 @@
 	required = true
 [rebase]
 	autosquash = true
+[user]
+	useConfigOnly = true
