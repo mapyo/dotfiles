@@ -90,6 +90,7 @@ brew 'kotlin'
 brew 'heroku-toolbelt'
 brew 'graphviz'
 brew 'glide'
+brew 'pt'
 
 cask 'java6'
 cask 'java7'
