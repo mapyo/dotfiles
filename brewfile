@@ -94,6 +94,7 @@ brew 'pt'
 
 cask 'java6'
 cask 'java7'
+cask 'java8'
 cask 'java'
 cask 'virtualbox'
 cask 'vagrant'
