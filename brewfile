@@ -91,6 +91,7 @@ brew 'heroku-toolbelt'
 brew 'graphviz'
 brew 'glide'
 brew 'pt'
+brew 'ndenv'
 
 cask 'java6'
 cask 'java7'
