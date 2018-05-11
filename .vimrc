@@ -300,6 +300,10 @@ set clipboard=unnamed
 
 "タブ関係の設定start
 set expandtab "タブ入力を複数の空白入力に置き換える
+
+au BufNewFile,BufRead *.go set noexpandtab
+au BufNewFile,BufRead Makefile set noexpandtab
+
 set tabstop=4 "画面上でタブ文字が占める幅
 set shiftwidth=4 "自動インデントでずれる幅
 " ↑ファイルによって使い分ける
