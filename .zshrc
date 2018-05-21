@@ -146,9 +146,6 @@ setopt auto_cd
 #export PATH=$PATH:/usr/local/Cellar/mysql/5.6.13/bin
 
 
-# pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
 # for android
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 export PATH="$PATH:$HOME/Library/Android/sdk/ndk-bundle"
@@ -296,6 +293,9 @@ export ANT_OPTS="-Xmx1024m -XX:MaxPermSize=512m"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
+
+# pyenv
+eval "$(pyenv init -)"
 
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$GOPATH/bin
