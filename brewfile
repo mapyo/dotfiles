@@ -25,7 +25,6 @@ brew 'glib'
 brew 'gmp'
 brew 'gnu-sed'
 brew 'gnutls'
-brew 'go'
 brew 'httpie'
 brew 'hub'
 brew 'icu4c'
@@ -66,9 +65,6 @@ brew 'phantomjs'
 brew 'pkg-config'
 brew 'pup'
 brew 'pwgen'
-brew 'rbenv'
-brew 'ruby-build'
-brew 'rbenv-gemset'
 brew 'readline'
 brew 'reattach-to-user-namespace'
 brew 'redis'
@@ -85,12 +81,30 @@ brew 'yasm'
 brew 'zlib'
 brew 'zsh'
 brew 'ghq'
-brew 'kotlin'
 brew 'heroku-toolbelt'
 brew 'graphviz'
-brew 'glide'
 brew 'pt'
+
+# kotlin
+brew 'kotlin'
+
+# ruby
+brew 'rbenv'
+brew 'ruby-build'
+brew 'rbenv-gemset'
+
+# node
 brew 'ndenv'
+
+# python
+brew 'pyenv'
+
+# go
+brew 'go'
+brew 'goenv'
+brew 'glide'
+
+brew 'direnv'
 
 cask 'java6'
 cask 'java8'
