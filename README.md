@@ -1,8 +1,17 @@
 dotfiles
 ----------------
 
-1. `cd ~`
-1. `git clone git@github.com:mapyo/dotfiles.git`
-1. `sh -x ./dotfiles/setup.sh`
-1. `git submodule init`
-1. `git submodule update`
+```
+cd ~
+git clone git@github.com:mapyo/dotfiles.git
+sh -x ./dotfiles/setup.sh
+cd ./dotfiles
+git submodule init
+git submodule update
+
+# brew install
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+brew bundle
+```
+
