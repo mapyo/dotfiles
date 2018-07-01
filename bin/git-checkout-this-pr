@@ -8,7 +8,7 @@ chrome-cli execute '(function () {
         location.pathname.split("/")[1],
         location.pathname.split("/")[2],
         document.title,
-        document.getElementsByClassName("css-truncate-target")[4].innerHTML
+        document.getElementsByClassName("css-truncate-target")[5].innerHTML
     ].join("\n");
 })()' | {
     read host
