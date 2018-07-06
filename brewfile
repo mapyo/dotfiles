@@ -84,6 +84,7 @@ brew 'ghq'
 brew 'heroku-toolbelt'
 brew 'graphviz'
 brew 'pt'
+brew 'awscli'
 
 # kotlin
 brew 'kotlin'
