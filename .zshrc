@@ -296,6 +296,10 @@ eval "$(rbenv init -)"
 # pyenv
 eval "$(pyenv init -)"
 
+# anyenv
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
+
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$GOPATH/bin
 
