@@ -95,9 +95,6 @@ brew 'rbenv'
 brew 'ruby-build'
 brew 'rbenv-gemset'
 
-# node
-brew 'ndenv'
-
 # python
 brew 'pyenv'
 
