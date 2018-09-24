@@ -145,7 +145,6 @@ setopt auto_cd
 # for brew
 #export PATH=$PATH:/usr/local/Cellar/mysql/5.6.13/bin
 
-
 # for android
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 export PATH="$PATH:$HOME/Library/Android/sdk/ndk-bundle"
@@ -296,9 +295,6 @@ eval "$(rbenv init -)"
 # pyenv
 eval "$(pyenv init -)"
 
-# anyenv
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init -)"
 
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$GOPATH/bin
@@ -360,3 +356,11 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+
+
+# anyenv
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
+
+
+
