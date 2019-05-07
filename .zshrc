@@ -341,8 +341,11 @@ export PATH="$HOME/.Pokemon-Terminal:$PATH"
 # for go
 export PATH="$PATH:/usr/local/go/bin"
 
-# goenv
-eval "$(goenv init -)"
+# anyenv
+eval "$(anyenv init - zsh)"
+export PATH="$HOME/.anyenv/bin:$PATH"
+
+# for golang
 export GOROOT=$(go env GOROOT)
 export GOPATH="$HOME/.go"
 export GOBIN="$GOPATH/bin"
