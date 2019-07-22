@@ -91,6 +91,4 @@ brew 'kotlin'
 brew 'direnv'
 
 cask 'java6'
-cask 'java8'
 cask 'java'
-cask 'vagrant'
