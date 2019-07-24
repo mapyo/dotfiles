@@ -108,12 +108,6 @@ alias dcc="docker-compose"
 alias be="bundle exec"
 alias pbcopy_chomp="ruby -pe 'chomp' | pbcopy"
 
-# adb-peco
-# ref. https://github.com/tomorrowkey/adb-peco
-alias adbp="adb-peco"
-# alias pidcat='pidcatp'
-
-
 ## 履歴を残す
 HISTFILE=$HOME/.zsh_history
 export HISTSIZE=10000
@@ -270,31 +264,11 @@ export PATH="/usr/local/opt/openssl/bin/openssl:$PATH"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# Android Stuido のエラー対策
-export PATH="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/bin/java and /Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib:$PATH"
-
 # for dotfiles bin
 export PATH=$PATH:$HOME/dotfiles/bin
 
 # adb_peco
 [ -f ~/dotfiles/genymotion-peco/bin/genymotion_peco.sh ] && source ~/dotfiles/genymotion-peco/bin/genymotion_peco.sh
-
-# for kotlin
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-export JDK_16=`/usr/libexec/java_home -v 1.6`
-# export JDK_17=`/usr/libexec/java_home -v 1.7`
-export JDK_18=`/usr/libexec/java_home -v 1.8`
-
-export ANT_OPTS="-Xmx1024m -XX:MaxPermSize=512m"
-
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.rbenv/shims:$PATH"
-eval "$(rbenv init -)"
-
-# pyenv
-eval "$(pyenv init -)"
-
 
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$GOPATH/bin
@@ -337,20 +311,6 @@ add-zsh-hook precmd notify_precmd
 
 # for pokemon
 export PATH="$HOME/.Pokemon-Terminal:$PATH"
-
-# for go
-export PATH="$PATH:/usr/local/go/bin"
-
-# anyenv
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init - zsh)"
-
-# goenv
-eval "$(goenv init - zsh)"
-export GOROOT=$(go env GOROOT)
-export GOPATH="$HOME/.go"
-export GOBIN="$GOPATH/bin"
-export PATH="$GOBIN:$GOROOT/bin:$PATH"
 
 # direnv
 eval "$(direnv hook zsh)"
