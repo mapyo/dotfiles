@@ -22,8 +22,6 @@
     pr = browse-remote --pr
 [ghq]
     root = ~/ghq
-[pull]
-	rebase = preserve
 [push]
 	default = current
 [filter "lfs"]
