@@ -327,4 +327,4 @@ export PATH="$PATH:$APPENGINE_SDK"
 
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init -)"
+eval "$(anyenv init - zsh)"
