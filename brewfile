@@ -84,6 +84,7 @@ brew 'graphviz'
 brew 'pt'
 brew 'awscli'
 brew 'cmake'
+brew 'anyenv'
 
 # kotlin
 brew 'kotlin'
