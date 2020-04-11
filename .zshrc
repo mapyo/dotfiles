@@ -137,7 +137,9 @@ setopt auto_cd
 # MySQL Path Setting
 #export PATH=$PATH:/usr/local/mysql/bin
 # for brew
-#export PATH=$PATH:/usr/local/Cellar/mysql/5.6.13/bin
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/mysql@5.6/lib"
+export CPPFLAGS="-I/usr/local/opt/mysql@5.6/include"
 
 # for android
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
@@ -223,21 +225,6 @@ ls_abbrev() {
     fi
 }
 
-# 起動時にtmuxをデフォルトで開くようにする
-# if [ -z "$TMUX" -a -z "$STY" ]; then
-#   if type tmuxx >/dev/null 2>&1; then
-#     tmuxx
-#   elif type tmux >/dev/null 2>&1; then
-#     if tmux has-session && tmux list-sessions | /usr/bin/grep -qE '.*]$'; then
-#       tmux attach && echo "tmux attached session "
-#     else
-#       tmux new-session && echo "tmux created new session"
-#     fi
-#   elif type screen > /dev/null 2>&1; then
-#     screen -rx || screen -D -RR
-#   fi
-# fi
-
 # for scala
 export PATH=$PATH:$HOME/bin
 export SCALA_HOME=~/.svm/current/rt
@@ -266,9 +253,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # for dotfiles bin
 export PATH=$PATH:$HOME/dotfiles/bin
-
-# adb_peco
-[ -f ~/dotfiles/genymotion-peco/bin/genymotion_peco.sh ] && source ~/dotfiles/genymotion-peco/bin/genymotion_peco.sh
 
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$GOPATH/bin
@@ -328,3 +312,4 @@ export PATH="$PATH:$APPENGINE_SDK"
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init - zsh)"
+source <(kubectl completion zsh)
