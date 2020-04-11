@@ -225,18 +225,12 @@ ls_abbrev() {
     fi
 }
 
-# for scala
-export PATH=$PATH:$HOME/bin
-export SCALA_HOME=~/.svm/current/rt
-export PATH=$SCALA_HOME/bin:$PATH
-
 # for brew install git
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
 # for brew openssl
 export PATH="/usr/local/opt/openssl/bin/openssl:$PATH"
-
 
 # zsh-bd
 # https://github.com/Tarrasch/zsh-bd
