@@ -308,7 +308,6 @@ export PATH="$PATH:$APPENGINE_SDK"
 
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
-source <(kubectl completion zsh)
 eval "$(anyenv init - zsh --no-rehash)"
 
 if (which zprof > /dev/null 2>&1) ;then
