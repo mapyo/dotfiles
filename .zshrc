@@ -1,3 +1,5 @@
+# zmodload zsh/zprof && zprof
+
 # auto-fu.zsh
 if [ -f ~/.zsh/auto-fu.zsh/auto-fu.zsh ]; then
   source ~/.zsh/auto-fu.zsh/auto-fu.zsh
@@ -307,3 +309,7 @@ export PATH="$PATH:$APPENGINE_SDK"
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init - zsh)"
 source <(kubectl completion zsh)
+
+if (which zprof > /dev/null 2>&1) ;then
+  zprof
+fi
