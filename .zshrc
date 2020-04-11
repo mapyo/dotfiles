@@ -109,6 +109,7 @@ alias dcc="docker-compose"
 
 alias be="bundle exec"
 alias pbcopy_chomp="ruby -pe 'chomp' | pbcopy"
+alias pwd_pbcopy="pwd | ruby -pe 'chomp' | pbcopy"
 
 ## 履歴を残す
 HISTFILE=$HOME/.zsh_history
