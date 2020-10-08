@@ -1,3 +1,5 @@
+# zmodload zsh/zprof && zprof
+
 # auto-fu.zsh
 if [ -f ~/.zsh/auto-fu.zsh/auto-fu.zsh ]; then
   source ~/.zsh/auto-fu.zsh/auto-fu.zsh
@@ -107,6 +109,7 @@ alias dcc="docker-compose"
 
 alias be="bundle exec"
 alias pbcopy_chomp="ruby -pe 'chomp' | pbcopy"
+alias pwd_pbcopy="pwd | ruby -pe 'chomp' | pbcopy"
 
 ## 履歴を残す
 HISTFILE=$HOME/.zsh_history
@@ -137,7 +140,9 @@ setopt auto_cd
 # MySQL Path Setting
 #export PATH=$PATH:/usr/local/mysql/bin
 # for brew
-#export PATH=$PATH:/usr/local/Cellar/mysql/5.6.13/bin
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/mysql@5.6/lib"
+export CPPFLAGS="-I/usr/local/opt/mysql@5.6/include"
 
 # for android
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
@@ -223,33 +228,12 @@ ls_abbrev() {
     fi
 }
 
-# 起動時にtmuxをデフォルトで開くようにする
-# if [ -z "$TMUX" -a -z "$STY" ]; then
-#   if type tmuxx >/dev/null 2>&1; then
-#     tmuxx
-#   elif type tmux >/dev/null 2>&1; then
-#     if tmux has-session && tmux list-sessions | /usr/bin/grep -qE '.*]$'; then
-#       tmux attach && echo "tmux attached session "
-#     else
-#       tmux new-session && echo "tmux created new session"
-#     fi
-#   elif type screen > /dev/null 2>&1; then
-#     screen -rx || screen -D -RR
-#   fi
-# fi
-
-# for scala
-export PATH=$PATH:$HOME/bin
-export SCALA_HOME=~/.svm/current/rt
-export PATH=$SCALA_HOME/bin:$PATH
-
 # for brew install git
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
 # for brew openssl
 export PATH="/usr/local/opt/openssl/bin/openssl:$PATH"
-
 
 # zsh-bd
 # https://github.com/Tarrasch/zsh-bd
@@ -266,9 +250,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # for dotfiles bin
 export PATH=$PATH:$HOME/dotfiles/bin
-
-# adb_peco
-[ -f ~/dotfiles/genymotion-peco/bin/genymotion_peco.sh ] && source ~/dotfiles/genymotion-peco/bin/genymotion_peco.sh
 
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$GOPATH/bin
@@ -295,7 +276,7 @@ deapk() {
 function notify_precmd {
     prev_command_status=$?
 
-    if [[ "$TTYIDLE" -gt 2 ]]; then
+    if [[ "$TTYIDLE" -gt 10 ]]; then
         notify_title=$([ "$prev_command_status" -eq 0 ] && echo "Command succeeded \U1F646" || echo "Command failed \U1F645")
         osascript -e "display notification \"$prev_command\" with title \"$notify_title\""
         (say ${prev_command} &) > /dev/null
@@ -328,4 +309,8 @@ export PATH="$PATH:$APPENGINE_SDK"
 
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init - zsh)"
+eval "$(anyenv init - zsh --no-rehash)"
+
+if (which zprof > /dev/null 2>&1) ;then
+  zprof
+fi

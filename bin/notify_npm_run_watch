@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require "pty"
+
+watch_cmd = "npm run watch"
+
+PTY.spawn(watch_cmd) do |i, o|
+  loop do
+    line = i.gets
+    print line
+    if line.include?("Built at:")
+      system "say build finished"
+    end
+  end
+end
