@@ -54,6 +54,7 @@ brew 'mpfr'
 
 brew 'mysql55'
 brew 'mysql56'
+brew 'mysql@5.7'
 brew 'mysql'
 
 brew 'nettle'
