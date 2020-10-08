@@ -311,6 +311,4 @@ export PATH="$PATH:$APPENGINE_SDK"
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init - zsh --no-rehash)"
 
-if (which zprof > /dev/null 2>&1) ;then
-  zprof
-fi
+export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
