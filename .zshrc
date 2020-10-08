@@ -309,6 +309,4 @@ export PATH="$PATH:$APPENGINE_SDK"
 
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init - zsh --no-rehash)"
-
-export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+eval "$(anyenv init - zsh)"
