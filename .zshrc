@@ -154,6 +154,8 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # for java
+export PATH=$PATH:/Applications/"Android Studio.app"/Contents/jre/jdk/Contents/Home/bin
+export JAVA_HOME=/Applications/"Android Studio.app"/Contents/jre/jdk/Contents/Home
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 alias javac='javac -J-Dfile.encoding=UTF-8'
 
