@@ -33,3 +33,5 @@
 	autosquash = true
 [user]
 	useConfigOnly = true
+[pull]
+	rebase = true
