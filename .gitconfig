@@ -20,6 +20,8 @@
     up = !git fetch -p && git checkout master && git pull origin master && git delete-merged-branches
     upd = !git fetch -p && git checkout develop && git pull origin develop && git delete-merged-branches
     pr = browse-remote --pr
+    find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
+    show-merge = "!sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'"
 [ghq]
     root = ~/ghq
 [push]
