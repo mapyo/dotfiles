@@ -19,6 +19,7 @@
     delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
     up = !git fetch -p && git checkout master && git pull origin master && git delete-merged-branches
     upd = !git fetch -p && git checkout develop && git pull origin develop && git delete-merged-branches
+    upm = !git fetch -p && git checkout main && git pull origin main && git delete-merged-branches
     pr = browse-remote --pr
 [ghq]
     root = ~/ghq
