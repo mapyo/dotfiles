@@ -1,3 +1,5 @@
+tap 'homebrew/cask-versions'
+
 brew 'tmux'
 brew 'peco'
 brew 'direnv'
@@ -19,3 +21,5 @@ brew 'docker'
 brew 'docker-compose'
 brew 'hub'
 brew 'vim'
+cask 'corretto8'
+cask 'corretto11'
