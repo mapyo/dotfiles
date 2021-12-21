@@ -9,11 +9,6 @@ if [ -f ~/.zsh/auto-fu.zsh/auto-fu.zsh ]; then
   zle -N zle-line-init
 fi
 
-# autojump
-#alias j="autojump"
-#if [ -f `brew --prefix`/etc/autojump ]; then
-#    . `brew --prefix`/etc/autojump
-#fi
 export FPATH="$FPATH:/opt/local/share/zsh/site-functions/"
 if [ -f /usr/local/Cellar/autojump/21.6.9/etc/autojump.zsh ]; then
     . /usr/local/Cellar/autojump/21.6.9/etc/autojump.zsh
@@ -78,9 +73,6 @@ export EDITOR="/usr/bin/vim"
 
 ## for alias
 
-# alias vim='/Applications/MacVim.app/Contents/MacOS/mvim -v'
-
-alias sb="open -a 'Sublime Text 2'"
 alias mvim="open -a MacVim"
 alias fg="find ./ -path \"./userdata\" -prune -o -name '*' | xargs grep -n"
 alias gd="git di"
@@ -95,6 +87,7 @@ alias gcp="git-checkout-this-pr"
 alias gcop="git checkout \`git branch | peco | sed -e \"s/\* //g\" | awk \"{print \$1}\"\`"
 alias gb="git br"
 alias sha="git rev-parse @"
+alias gdc='git dc'
 alias hp="hub pull-request -o"
 
 alias vu="vagrant up"
@@ -138,27 +131,13 @@ setopt extended_history
 # ディレクトリ名入れるだけでcd出来る
 setopt auto_cd
 
-# MySQL Path Setting
-#export PATH=$PATH:/usr/local/mysql/bin
-# for brew
-export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/mysql@5.6/lib"
-export CPPFLAGS="-I/usr/local/opt/mysql@5.6/include"
-
 # for android
 export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 export PATH="$PATH:$HOME/Library/Android/sdk/ndk-bundle"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 
-
-# for composer
-export PATH="$PATH:$HOME/.composer/vendor/bin"
-
-# for java
-alias javac='javac -J-Dfile.encoding=UTF-8'
-
-# for git
-alias gdc='git dc'
+# for brew
+export PATH="/opt/homebrew/bin:$PATH"
 
 # for android
 alias adb-restart='adb kill-server; adb start-server'
@@ -187,8 +166,6 @@ jqless() { jq . $* | vim -c "set ft=json" - }
 
 # urldecodeしてくれるやつ
 urldecode() { nkf --url-input  $* }
-
-#source /Users/usr0600285/.zsh/zaw/zaw.zsh
 
 # zshにてcd後に自動的にlsを行うchpwd関数
 # https://gist.github.com/yonchu/3935922
@@ -228,13 +205,6 @@ ls_abbrev() {
     fi
 }
 
-# for brew install git
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-
-# for brew openssl
-export PATH="/usr/local/opt/openssl/bin/openssl:$PATH"
-
 # zsh-bd
 # https://github.com/Tarrasch/zsh-bd
 . $HOME/.zsh/plugins/bd/bd.zsh
@@ -242,34 +212,11 @@ export PATH="/usr/local/opt/openssl/bin/openssl:$PATH"
 # local setting
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
-# phpbrew
-[ -f ~/.phpbrew/bashrc ] && source ~/.phpbrew/bashrc
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 # for dotfiles bin
 export PATH=$PATH:$HOME/dotfiles/bin
 
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$GOPATH/bin
-
-# Decompile Java classes recursively keeping hierarchy
-jadr() {
-  jad -8 -s java -d $2 -r $1/**/*.class
-}
-
-# Decompile Android application
-deapk() {
-  local dst=${${1##*/}%%.*}
-  dst+=".depackaged.`date +"%Y%m%d%H%M"`"
-  unzip $1 -d $dst
-  d2j-dex2jar -o ${dst}/classes-dex2jar.jar ${dst}/classes.dex
-  mkdir -p ${dst}/classes
-  unzip ${dst}/classes-dex2jar.jar -d ${dst}/classes
-  jadr ${dst} ${dst}/src
-}
-
 
 # Notify time-consuming commands
 # ref. https://qiita.com/ganmacs/items/6d2f39903cfabdb49b46
@@ -291,21 +238,8 @@ autoload -Uz add-zsh-hook
 add-zsh-hook preexec store_command
 add-zsh-hook precmd notify_precmd
 
-# for pokemon
-export PATH="$HOME/.Pokemon-Terminal:$PATH"
-
 # direnv
 eval "$(direnv hook zsh)"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud-sdk/path.zsh.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
-
-# goapp
-export APPENGINE_SDK="$HOME/google-cloud-sdk/platform/google_appengine"
-export PATH="$PATH:$APPENGINE_SDK"
 
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
