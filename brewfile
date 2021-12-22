@@ -21,5 +21,8 @@ brew 'docker'
 brew 'docker-compose'
 brew 'hub'
 brew 'vim'
+brew 'make'
+brew 'cmake'
+
 cask 'corretto8'
 cask 'corretto11'
