@@ -23,6 +23,7 @@ brew 'hub'
 brew 'vim'
 brew 'make'
 brew 'cmake'
+brew 'gh'
 
 cask 'corretto8'
 cask 'corretto11'
