@@ -24,6 +24,8 @@ brew 'vim'
 brew 'make'
 brew 'cmake'
 brew 'gh'
+brew 'graphviz'
 
 cask 'corretto8'
 cask 'corretto11'
+cask 'temurin'
