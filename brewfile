@@ -26,6 +26,7 @@ brew 'cmake'
 brew 'gh'
 brew 'graphviz'
 brew 'openssl'
+brew 'terraform'
 
 cask 'corretto8'
 cask 'corretto11'
