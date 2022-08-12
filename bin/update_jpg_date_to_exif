@@ -1,0 +1,22 @@
+#!/bin/bash -eu
+#
+# ビデオカメラからコピーしたjpgファイルの作成日・更新日をexifの日時に更新するスクリプト
+#
+
+
+JPG_TARGET_COUNT=$(ls | grep \.JPG | wc -l)
+
+if [ $JPG_TARGET_COUNT -eq 0 ]; then
+  echo "JPG file does not exist"
+  exit 1
+fi
+
+for jpg_file in $(ls | grep \.JPG); do
+  echo ""
+  echo "start $jpg_file"
+  EXIF_DATE=$(identify -verbose "$jpg_file" | grep "exif:DateTime:" | cut -c 20-)
+  SET_FILE_DATE=$(date -j -f "%Y:%m:%d %H:%M:%S" "$EXIF_DATE" +"%m/%d/%Y %H:%M:%S")
+  SetFile -d "$SET_FILE_DATE" "$jpg_file"
+  SetFile -m "$SET_FILE_DATE" "$jpg_file"
+  echo "$jpg_file creation and modification date is $SET_FILE_DATE"
+done

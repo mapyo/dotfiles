@@ -1,0 +1,21 @@
+#!/bin/bash -eu
+#
+# ビデオカメラからコピーしたMP4ファイルの作成日・更新日をmetadataの日付にするスクリプト
+#
+
+MP4_TARGET_COUNT=$(ls | grep \.MP4 | wc -l)
+
+if [ $MP4_TARGET_COUNT -eq 0 ]; then
+  echo "MP4 file does not exist"
+  exit 1
+fi
+
+for mp4_file in $(ls | grep \.MP4); do
+  echo ""
+  echo "start $mp4_file"
+  META_DATE=$(ffmpeg -i "$mp4_file" 2>&1 | grep -m 1 creation_time | awk '{print $NF}')
+  SET_FILE_DATE=$(date -v+9H -j -f "%Y-%m-%dT%H:%M:%S.000000Z" "$META_DATE" +"%m/%d/%Y %H:%M:%S")
+  SetFile -d "$SET_FILE_DATE" "$mp4_file"
+  SetFile -m "$SET_FILE_DATE" "$mp4_file"
+  echo "$mp4_file creation and modification date is $SET_FILE_DATE"
+done
