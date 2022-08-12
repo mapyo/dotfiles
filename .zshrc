@@ -246,4 +246,4 @@ export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init - zsh)"
 
 # for flutter
-export PATH="$PATH:~/development/flutter/bin"
+export PATH="$PATH:$HOME/development/flutter/bin"
