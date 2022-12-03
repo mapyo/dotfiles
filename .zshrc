@@ -138,6 +138,7 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 
 # for brew
 export PATH="/opt/homebrew/bin:$PATH"
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # for android
 alias adb-restart='adb kill-server; adb start-server'
