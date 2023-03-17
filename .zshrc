@@ -217,7 +217,9 @@ ls_abbrev() {
 export PATH=$PATH:$HOME/dotfiles/bin
 
 # for rust bin
-export PATH=$PATH:$HOME/.cargo/bin
+if [[ -s ~/.cargo/bin ]]; then
+  export PATH=$PATH:$HOME/.cargo/bin
+fi
 
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$GOPATH/bin
