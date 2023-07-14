@@ -222,7 +222,6 @@ if [[ -s ~/.cargo/bin ]]; then
 fi
 
 export PATH=$PATH:$HOME/bin
-export PATH=$PATH:$GOPATH/bin
 
 # Notify time-consuming commands
 # ref. https://qiita.com/ganmacs/items/6d2f39903cfabdb49b46
@@ -253,3 +252,5 @@ eval "$(anyenv init - zsh)"
 
 # for flutter
 export PATH="$PATH:$HOME/development/flutter/bin"
+
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
