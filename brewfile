@@ -28,6 +28,7 @@ brew 'graphviz'
 brew 'openssl'
 brew 'terraform'
 brew 'pwgen'
+brew 'grep'
 
 cask 'corretto8'
 cask 'corretto11'
