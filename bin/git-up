@@ -1,0 +1,10 @@
+#!/bin/sh
+git fetch -p
+
+if git branch --list main | grep -q 'main'; then
+  git checkout main && git pull origin main
+else
+  git checkout master && git pull origin master
+fi
+
+git delete-merged-branches
