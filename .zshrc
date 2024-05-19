@@ -99,6 +99,11 @@ alias vr="vagrant reload"
 alias dc="docker"
 alias dcc="docker-compose"
 
+alias tf="terraform"
+alias tv="terraform validate"
+alias tp="terraform plan"
+alias ta="terraform apply"
+
 
 alias be="bundle exec"
 alias pbcopy_chomp="ruby -pe 'chomp' | pbcopy"
