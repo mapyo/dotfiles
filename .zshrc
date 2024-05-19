@@ -249,6 +249,9 @@ eval "$(direnv hook zsh)"
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init - zsh)"
 
+# goenv
+export PATH="$GOENV_ROOT/shims:$PATH"
+
 # for flutter
 export PATH="$PATH:$HOME/development/flutter/bin"
 
