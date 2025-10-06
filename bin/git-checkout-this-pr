@@ -7,15 +7,15 @@ chrome-cli execute '(function () {
         location.hostname,
         location.pathname.split("/")[1],
         location.pathname.split("/")[2],
-        document.title,
-        (document.querySelectorAll("a[class*=\"BranchName\"]")[1] || {}).innerText || ""
+        location.pathname.split("/")[4],
+        document.title
     ].join("\n");
 })()' | {
     read host
     read user
     read repo
+    read pr_number
     read title
-    read pr_ref
 
     remote_url=$(git config remote.origin.url)
     remote_url=${remote_url%.git}
@@ -28,20 +28,26 @@ chrome-cli execute '(function () {
         exit 1
     fi
 
-    pr_branch=${pr_ref#*:}
-    pr_user=${pr_ref%:*}
-    if [ "$pr_user" = "$pr_ref" ]; then
-        pr_user=
+    # gh コマンドでマージ元のユーザーとブランチを取得
+    pr_info=$(gh pr view "$pr_number" --repo "$user/$repo" --json headRefName,headRepositoryOwner -q '[.headRepositoryOwner.login, .headRefName] | join(":")')
+    pr_user=${pr_info%:*}
+    pr_branch=${pr_info#*:}
+
+    if [ -z "$pr_branch" ]; then
+        echo "Failed to get PR branch from GitHub" >&2
+        exit 1
     fi
 
-    echo "$title ($pr_ref)"
+    echo "$title ($pr_user:$pr_branch)"
 
-    if [ -n "$pr_user" ]; then
+    if [ "$pr_user" != "$user" ]; then
+        # フォークからのPR
         git remote add -f "$pr_user" "https://$host/$pr_user/$repo" || git remote update "$pr_user"
-        git checkout -b $pr_branch --track $pr_user/$pr_branch
+        git checkout -b "$pr_branch" --track "$pr_user/$pr_branch"
     else
+        # 同じリポジトリ内のPR
         git remote update origin
-        git checkout $pr_branch
-        git pull origin $pr_branch
+        git checkout "$pr_branch"
+        git pull origin "$pr_branch"
     fi
 }
