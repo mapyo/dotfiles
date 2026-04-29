@@ -3,3 +3,4 @@
 .zsh
 .zshrc.local
 Brewfile.lock.json
+.DS_Store
